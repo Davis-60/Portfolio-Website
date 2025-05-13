@@ -4,28 +4,29 @@ let theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#4a6e8a',
-      light: '#6c8ea8',
-      dark: '#304a5c',
-      contrastText: '#ffffff',
+      main: '#3a4a7a',
+      light: '#5a6a95',
+      dark: '#2a385d',
+      contrastText: '#e6e6e6',
     },
     secondary: {
-      main: '#e74c3c',
-      light: '#ec7063',
-      dark: '#c0392b',
-      contrastText: '#ffffff',
+      main: '#8a5a55',
+      light: '#a77a75',
+      dark: '#6a443f',
+      contrastText: '#e6e6e6',
     },
     background: {
-      default: '#121212',
-      paper: '#1e1e1e',
+      default: '#0a0a10',
+      paper: '#0f111e',
     },
     text: {
-      primary: '#ffffff',
-      secondary: '#b0b0b0',
+      primary: '#d5d5df',
+      secondary: '#9a9aad',
     },
   },
   typography: {
     fontFamily: [
+      'Inter',
       'Roboto',
       '"Helvetica Neue"',
       'Arial',
@@ -51,15 +52,16 @@ let theme = createTheme({
     },
   },
   shape: {
-    borderRadius: 8,
+    borderRadius: 12,
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderRadius: 8,
-          padding: '8px 16px',
+          borderRadius: 12,
+          padding: '10px 18px',
+          fontWeight: 500,
         },
       },
     },
@@ -67,21 +69,30 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           overflow: 'hidden',
+          boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
         },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#1a1a1a',
+          backgroundColor: '#14142b',
           color: '#ffffff',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
         },
       },
     },
     MuiDivider: {
       styleOverrides: {
         root: {
-          backgroundColor: '#4a6e8a',
+          backgroundColor: '#6c63ff',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundImage: 'none',
         },
       },
     },

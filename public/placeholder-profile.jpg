@@ -1,6 +1,0 @@
-<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="300" height="300" fill="#3498db" />
-  <circle cx="150" cy="120" r="70" fill="#fff" />
-  <rect x="80" y="200" width="140" height="120" rx="40" fill="#fff" />
-  <text x="150" y="275" font-family="Arial" font-size="16" fill="#3498db" text-anchor="middle">DAVIS FEATHERSTONE</text>
-</svg> 
