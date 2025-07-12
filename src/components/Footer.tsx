@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
           }}
         >
           <Typography variant="body1" sx={{ mb: { xs: 2, md: 0 } }}>
-            © {new Date().getFullYear()} Davis Featherstone. All rights reserved.
+            © {new Date().getFullYear()} Davis Featherstone.
           </Typography>
           
           <Box>
@@ -59,19 +59,19 @@ const Footer: React.FC = () => {
         
         <Box sx={{ mt: 2, textAlign: 'center' }}>
           <Typography variant="body2" sx={{ opacity: 0.8 }}>
-            <Link href="#home" color="inherit" sx={{ mx: 1 }}>
+            <Link href="#" color="inherit" sx={{ mx: 1 }}>
               Home
             </Link>
-            <Link href="#about" color="inherit" sx={{ mx: 1 }}>
+            <Link href="#/about" color="inherit" sx={{ mx: 1 }}>
               About
             </Link>
-            <Link href="#projects" color="inherit" sx={{ mx: 1 }}>
+            <Link href="#/projects" color="inherit" sx={{ mx: 1 }}>
               Projects
             </Link>
-            <Link href="#skills" color="inherit" sx={{ mx: 1 }}>
-              Skills
+            <Link href="#/work" color="inherit" sx={{ mx: 1 }}>
+              Work History
             </Link>
-            <Link href="#contact" color="inherit" sx={{ mx: 1 }}>
+            <Link href="#/contact" color="inherit" sx={{ mx: 1 }}>
               Contact
             </Link>
           </Typography>

@@ -9,44 +9,43 @@ interface Project {
   description: string;
   image: string;
   tags: string[];
-  githubUrl: string;
+  gitRepoURL: string;
   liveUrl?: string;
 }
 
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce application with user authentication, product catalog, shopping cart, and payment processing capabilities.',
+    title: 'System for Processor Analysis GUI',
+    description: 'Improvements to Duke Research Project applying Statistical Model Checking to Computer Architecture Data',
     image: '/project1.jpg',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Redux'],
-    githubUrl: 'https://github.com/davisfeatherstone/ecommerce-platform',
-    liveUrl: 'https://ecommerce-platform-demo.netlify.app'
+    tags: ['Python', 'Tkinter', 'LLM Integration'],
+    gitRepoURL: 'https://github.com/davisfeatherstone/ecommerce-platform',
+    liveUrl: ''
   },
   {
     id: 2,
-    title: 'Weather Dashboard',
-    description: 'An interactive web application that displays real-time weather data from multiple locations using external APIs and data visualization.',
+    title: 'CDN Server',
+    description: 'MITM Server ',
     image: '/project2.jpg',
-    tags: ['JavaScript', 'React', 'Chart.js', 'API Integration'],
-    githubUrl: 'https://github.com/davisfeatherstone/weather-dashboard'
+    tags: ['Python', 'Networking', 'Systems Programming'],
+    gitRepoURL: ''
   },
   {
     id: 3,
-    title: 'Task Management System',
-    description: 'A productivity application that allows users to create, organize, and track tasks with features like due dates, priority levels, and category filtering.',
+    title: 'Logisim CPU',
+    description: 'Single Core CPU built from scratch in Logisim Emulator',
     image: '/project3.jpg',
-    tags: ['TypeScript', 'React', 'Material-UI', 'Firebase'],
-    githubUrl: 'https://github.com/davisfeatherstone/task-manager',
-    liveUrl: 'https://task-manager-app-demo.netlify.app'
+    tags: ['Logisim', 'Computer Architecture', '', ''],
+    gitRepoURL: '',
   },
   {
     id: 4,
-    title: 'Algorithm Visualizer',
-    description: 'An educational tool that visualizes common algorithms such as sorting, searching, and graph traversal to help students understand their inner workings.',
+    title: 'XXX',
+    description: 'XXX',
     image: '/project4.jpg',
     tags: ['React', 'TypeScript', 'Canvas API', 'Algorithms'],
-    githubUrl: 'https://github.com/davisfeatherstone/algorithm-visualizer'
+    gitRepoURL: 'https://github.com/davisfeatherstone/algorithm-visualizer'
   }
 ];
 
@@ -128,7 +127,7 @@ const Projects: React.FC = () => {
                   <Button 
                     size="small" 
                     startIcon={<GitHubIcon />} 
-                    href={project.githubUrl}
+                    href={project.gitRepoURL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -15,7 +15,7 @@ const HomeComp: React.FC = () => {
   return (
     <Box
       sx={{
-        bgcolor: "background.paper",
+        bgcolor: "background.default",
         pt: 12,
         pb: 6,
         minHeight: "90vh",
@@ -42,18 +42,16 @@ const HomeComp: React.FC = () => {
             >
               Davis Featherstone
             </Typography>
-            <Typography variant="h5" color="text.secondary" paragraph>
+            <Typography variant="h5" color="text.secondary">
               Computer Science Student
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
-              paragraph
               sx={{ mb: 4 }}
             >
-              Hello! I'm a passionate CS student with interests in software
-              development, algorithms, and creating elegant solutions to complex
-              problems. Welcome to my portfolio!
+              I'm Davis Featherstone, a student at Duke University studying Computer Science and Economics.
+              Welcome to my portfolio!
             </Typography>
             <Stack
               direction={{ xs: "column", sm: "row" }}
@@ -92,8 +90,8 @@ const HomeComp: React.FC = () => {
               alt="Davis Featherstone"
               src="/ProfilePicture.jpeg"
               sx={{
-                width: { xs: 200, md: 300 },
-                height: { xs: 200, md: 300 },
+                width: { xs: 200, md: 300, lg: 500},
+                height: { xs: 200, md: 300, lg: 500},
                 boxShadow: 3,
               }}
             />

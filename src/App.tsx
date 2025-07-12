@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
-import SkillsPage from './pages/SkillsPage';
+import WorkHistoryPage from './pages/WorkHistoryPage';
 import ContactPage from './pages/ContactPage';
 import ResumePage from './pages/ResumePage';
 
@@ -28,7 +28,7 @@ const App: React.FC = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/skills" element={<SkillsPage />} />
+              <Route path="/work" element={<WorkHistoryPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/resume" element={<ResumePage />} />
             </Routes>
