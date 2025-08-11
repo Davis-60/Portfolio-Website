@@ -21,7 +21,7 @@ interface WorkExperience {
   location: string;
   duration: string;
   description: string[];
-  technologies: string[];
+  technologies?: string[];
   logo: string;
   logoStyle?: React.CSSProperties;
 }
@@ -32,43 +32,54 @@ const workExperiences: WorkExperience[] = [
     title: "Software Engineering Intern",
     company: "Rubrik",
     location: "Palo Alto, CA",
-    duration: "May 2024 - August 2025",
+    duration: "May 2025 - Aug 2025",
     description: [
-      "Developed full-stack web applications using React and Node.js",
-      "Collaborated with cross-functional teams to deliver features on time",
-      "Implemented automated testing and CI/CD pipelines",
-      "Optimized database queries and improved application performance",
+      "Created multi-agent system which dynamically generates API calls to replicate complete UI functionality in an agentic chat interface.",
+      "Combined with RAG system and MCP server of troubleshooting info, the agent can triage and resolve thousands of potential Rubrik user issues by combining solution steps with dynamically generated API actions.",
+      "Novel agentic solution was directly implemented into Rubrik's core product.",
+      "Built with Python, Google Agent Development Kit, Pytorch, and Azure AI Vector Search.",
+      "Worked closely with Distinguished and Staff engineers to implement my project into near-production builds.",
+      "Contributed to open-source project LiteLLM to unblock team on bugs stemming from the library.",
     ],
-    technologies: ["React", "Node.js", "TypeScript", "MongoDB", "AWS"],
+    technologies: [
+      "Python",
+      "Google Agent Development Kit",
+      "PyTorch",
+      "Azure AI Vector Search",
+      "LiteLLM",
+    ],
     logo: "/rubrik_logo.png",
     logoStyle: { height: "80%", width: "80%" },
   },
   {
     id: 2,
-    title: "CS 330 Teaching Assistant",
-    company: "Duke University",
-    location: "Durham, NC",
-    duration: "August 2025 - Present",
-    description: ["Boilerplate", "Text", "Here"],
-    technologies: [],
-    logo: "/duke_circular_logo.webp",
-    logoStyle: { height: "110%", width: "110%" },
-  },
-  {
-    id: 1,
     title: "Software Engineering Intern",
     company: "Aunalytics",
     location: "Traverse City, MI",
     duration: "June 2024 - August 2024",
     description: [
-      "Developed full-stack web applications using React and Node.js",
-      "Collaborated with cross-functional teams to deliver features on time",
-      "Implemented automated testing and CI/CD pipelines",
-      "Optimized database queries and improved application performance",
+      "Worked on an Agile Development team with 8+ full-time engineers.",
+      "Built React components and full pages, including a grid to show all information on users within an organization.",
+      "Wrote APIs to create and augment user and organization metadata in the database backend.",
+      "Handled bug fixes across the entire codebase.",
+      "Worked closely with product managers and contributed process improvement suggestions which increased velocity.",
     ],
-    technologies: ["React", "TypeScript", "Node.js", "MongoDB"],
-    logo: "/rubrik_logo.png",
-    logoStyle: { height: "80%", width: "80%" },
+    technologies: ["TypeScript", "React", "MongoDB", "API Development"],
+    logo: "/aunalytics_logo.jpeg",
+    logoStyle: { height: "100%", width: "100%" },
+  },
+  {
+    id: 3,
+    title: "CS 330 Teaching Assistant",
+    company: "Duke University",
+    location: "Durham, NC",
+    duration: "August 2025 - Present",
+    description: [
+      "Leading recitations and office hours for Duke's upper-level alogrithmic analysis course",
+      "Starting Fall 2025 Semester",
+    ],
+    logo: "/duke_circular_logo.webp",
+    logoStyle: { height: "110%", width: "110%" },
   },
 ];
 
@@ -228,35 +239,38 @@ const WorkHistory: React.FC = () => {
                       </Typography>
                     ))}
 
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{ mb: 1, mt: 3, fontWeight: "medium" }}
-                    >
-                      Technologies & Skills:
-                    </Typography>
+                    {experience.technologies && (
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mb: 1, mt: 3, fontWeight: "medium" }}
+                      >
+                        Technologies & Skills:
+                      </Typography>
+                    )}
                     <Stack
                       direction="row"
                       spacing={1}
                       flexWrap="wrap"
                       useFlexGap
                     >
-                      {experience.technologies.map((tech) => (
-                        <Chip
-                          key={tech}
-                          label={tech}
-                          size="small"
-                          variant="outlined"
-                          color="primary"
-                          sx={{
-                            fontSize: "0.75rem",
-                            "&:hover": {
-                              bgcolor: "primary.main",
-                              color: "white",
-                            },
-                          }}
-                        />
-                      ))}
+                      {experience.technologies &&
+                        experience.technologies.map((tech) => (
+                          <Chip
+                            key={tech}
+                            label={tech}
+                            size="small"
+                            variant="outlined"
+                            color="primary"
+                            sx={{
+                              fontSize: "0.75rem",
+                              "&:hover": {
+                                bgcolor: "primary.main",
+                                color: "white",
+                              },
+                            }}
+                          />
+                        ))}
                     </Stack>
                   </Box>
                 </Box>

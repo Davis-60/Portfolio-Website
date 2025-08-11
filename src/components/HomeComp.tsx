@@ -45,13 +45,9 @@ const HomeComp: React.FC = () => {
             <Typography variant="h5" color="text.secondary">
               Computer Science Student
             </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ mb: 4 }}
-            >
-              I'm Davis Featherstone, a student at Duke University studying Computer Science and Economics.
-              Welcome to my portfolio!
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
+              I'm Davis Featherstone, a student at Duke University studying
+              Computer Science and Economics. Welcome to my portfolio website!
             </Typography>
             <Stack
               direction={{ xs: "column", sm: "row" }}
@@ -90,8 +86,8 @@ const HomeComp: React.FC = () => {
               alt="Davis Featherstone"
               src="/ProfilePicture.jpeg"
               sx={{
-                width: { xs: 200, md: 300, lg: 500},
-                height: { xs: 200, md: 300, lg: 500},
+                width: { xs: 200, md: 300, lg: 500 },
+                height: { xs: 200, md: 300, lg: 500 },
                 boxShadow: 3,
               }}
             />
