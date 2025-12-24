@@ -34,8 +34,7 @@ const HomeComp: React.FC = () => {
         >
           <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
             <Typography
-              component="h1"
-              variant="h3"
+              variant="h2"
               color="text.primary"
               gutterBottom
               fontWeight="bold"
