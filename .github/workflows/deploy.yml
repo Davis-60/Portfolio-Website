@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
     
     steps:
       - name: Checkout code
@@ -28,9 +30,15 @@ jobs:
       - name: Build
         run: npm run build
         
+      - name: Verify build output
+        run: |
+          ls -la build/
+          test -f build/index.html || exit 1
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          cname: davisfeatherstone.com
 
