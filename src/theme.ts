@@ -16,8 +16,8 @@ let theme = createTheme({
       contrastText: '#e6e6e6',
     },
     background: {
-      default: '#0a0a10',
-      paper: '#0f111e',
+      default: '#0f0f19ff',
+      paper: '#131627ff',
     },
     text: {
       primary: '#d5d5df',
