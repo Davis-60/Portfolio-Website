@@ -20,6 +20,10 @@ Runs the app in the development mode on port 3000
 
 Builds the app for production to the `build` folder.
 
+### serve -s build
+
+Servres locally the app as built in `build folder`
+
 ## Technologies Used
 
 - React
