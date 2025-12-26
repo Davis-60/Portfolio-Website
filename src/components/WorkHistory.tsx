@@ -1,14 +1,13 @@
-import React from "react";
 import {
   Box,
   Container,
   Typography,
-  Divider,
   CardContent,
   Card,
   Chip,
   Stack,
 } from "@mui/material";
+import type { CSSProperties } from "react";
 
 import BusinessIcon from "@mui/icons-material/Business";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
@@ -23,7 +22,7 @@ interface WorkExperience {
   description: string[];
   technologies?: string[];
   logo: string;
-  logoStyle?: React.CSSProperties;
+  logoStyle?: CSSProperties;
 }
 
 const workExperiences: WorkExperience[] = [
@@ -74,7 +73,7 @@ const workExperiences: WorkExperience[] = [
     location: "Durham, NC",
     duration: "August 2025 - Present",
     description: [
-      "Leading office hours for Duke's upper-level alogrithm design and analysis course.",
+      "Leading office hours for Duke's upper-level algorithm design and analysis course.",
       "Grading homework and exams.",
     ],
     logo: "/duke_circular_logo.webp",
@@ -82,7 +81,7 @@ const workExperiences: WorkExperience[] = [
   },
 ];
 
-const WorkHistory: React.FC = () => {
+const WorkHistory = () => {
   return (
     <Box
       sx={{
@@ -102,7 +101,17 @@ const WorkHistory: React.FC = () => {
           >
             Work Experience
           </Typography>
-          <Divider sx={{ width: "80px", mx: "auto", borderBottomWidth: 3 }} />
+          <Box
+            component="hr"
+            sx={{
+              width: "80px",
+              mx: "auto",
+              border: "none",
+              borderBottom: "3px solid",
+              borderColor: "primary.main",
+              mb: 6,
+            }}
+          />
         </Box>
 
         <Stack spacing={4}>

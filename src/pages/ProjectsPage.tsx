@@ -1,13 +1,5 @@
-import React from 'react';
-import { Box } from '@mui/material';
 import Projects from '../components/Projects';
 
-const ProjectsPage: React.FC = () => {
-  return (
-    <Box component="main" sx={{ flexGrow: 1 }}>
-      <Projects />
-    </Box>
-  );
-};
+const ProjectsPage = () => <Projects />;
 
 export default ProjectsPage; 

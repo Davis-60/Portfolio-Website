@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { HashRouter,  Routes, Route } from 'react-router-dom';
 import theme from './theme';
@@ -15,7 +14,7 @@ import WorkHistoryPage from './pages/WorkHistoryPage';
 import ContactPage from './pages/ContactPage';
 import ResumePage from './pages/ResumePage';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     //Using Hash Router to work with static site deployment
     <HashRouter>

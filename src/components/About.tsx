@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Container,
@@ -10,7 +9,7 @@ import {
 import CodeIcon from "@mui/icons-material/Code";
 import SchoolIcon from "@mui/icons-material/School";
 
-const About: React.FC = () => {
+const About = () => {
   const skills = [
     "Agentic AI",
     "Google ADK",
@@ -65,7 +64,7 @@ const About: React.FC = () => {
                 }}
               >
                 I'm a Computer Science student at Duke University with a deep
-                interest in technology, innovation, and software devolpment. My
+                interest in technology, innovation, and software development. My
                 journey began with curiosity about how technology can be used to
                 positively shape our world, and has evolved into a focused
                 pursuit of excellence in programming, problem-solving, and
@@ -76,9 +75,9 @@ const About: React.FC = () => {
                 sx={{ fontSize: "1.1rem", lineHeight: 1.8 }}
               >
                 I specialize in full-stack development with a focus on agentic
-                AI. When I'm not coding, I do all I can to build a purpsoeful
+                AI. When I'm not coding, I do all I can to build a purposeful
                 and balanced life. For me, this means exploring the latest tech
-                trends, improving my personal fitness, enaging in outdoor
+                trends, improving my personal fitness, engaging in outdoor
                 activities, and reading about a broad range of subjects from
                 philosophy to politics.
               </Typography>

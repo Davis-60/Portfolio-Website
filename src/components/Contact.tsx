@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, Container, Typography, Paper, Divider } from '@mui/material';
+import { Box, Container, Typography, Paper } from '@mui/material';
+import SectionHeader from './SectionHeader';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
     <Box
       sx={{
@@ -13,17 +13,7 @@ const Contact: React.FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
-          component="h2"
-          variant="h4"
-          align="center"
-          color="text.primary"
-          gutterBottom
-          fontWeight="bold"
-        >
-          Contact Me
-        </Typography>
-        <Divider sx={{ mb: 6, width: '80px', mx: 'auto', borderBottomWidth: 3 }} />
+        <SectionHeader title="Contact Me" variant="h4" />
         
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Paper 

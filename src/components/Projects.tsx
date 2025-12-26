@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Container,
@@ -7,10 +6,11 @@ import {
   CardContent,
   CardActions,
   Button,
-  Divider,
   Chip,
   Stack,
 } from "@mui/material";
+import type { ReactNode } from "react";
+import SectionHeader from "./SectionHeader";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CodeIcon from "@mui/icons-material/Code";
 import PsychologyIcon from "@mui/icons-material/Psychology";
@@ -23,14 +23,14 @@ interface Project {
   description: string;
   tags: string[];
   gitRepoURL: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
 }
 
 const projects: Project[] = [
   {
     id: 1,
     title: "Customer Support Agentic AI",
-    description: "Agentic AI for Customer Support at Rubrik. Combines dyncamically generated API calls with soluiton steps to triage issues end to end.",
+    description: "Agentic AI for Customer Support at Rubrik. Combines dynamically generated API calls with solution steps to triage issues end to end.",
     tags: ["Google ADK", "Python", "LLM", "Agent Tools"],
     gitRepoURL: "",
     icon: <PsychologyIcon />,
@@ -39,7 +39,7 @@ const projects: Project[] = [
     id: 2,
     title: "Background Music Generation",
     description: "System using a fine-tuned LLaVA model + Meta MusicGen to add context-aware AI background music to video clips.",
-    tags: ["Machinge Learning", "Music Generation", "LoRA"],
+    tags: ["Machine Learning", "Music Generation", "LoRA"],
     gitRepoURL: "https://github.com/Davis-60/CS372_Final_Project",
     icon: <CodeIcon />,
   },
@@ -61,7 +61,7 @@ const projects: Project[] = [
   },
 ];
 
-const Projects: React.FC = () => {
+const Projects = () => {
   return (
     <Box
       sx={{
@@ -70,19 +70,7 @@ const Projects: React.FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
-          component="h2"
-          variant="h4"
-          align="center"
-          color="text.primary"
-          gutterBottom
-          fontWeight="bold"
-        >
-          My Projects
-        </Typography>
-        <Divider
-          sx={{ mb: 6, width: "80px", mx: "auto", borderBottomWidth: 3 }}
-        />
+        <SectionHeader title="My Projects" variant="h4" />
 
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
           {projects.map((project) => (

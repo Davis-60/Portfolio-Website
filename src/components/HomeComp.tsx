@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Container,
@@ -11,7 +10,7 @@ import { Link } from "react-router-dom";
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
 
-const HomeComp: React.FC = () => {
+const HomeComp = () => {
   return (
     <Box
       sx={{
