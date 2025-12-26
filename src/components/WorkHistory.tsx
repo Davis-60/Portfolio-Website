@@ -33,10 +33,10 @@ const workExperiences: WorkExperience[] = [
     location: "Palo Alto, CA",
     duration: "May 2025 - Aug 2025",
     description: [
-      "Created multi-agent system which dynamically generates API calls to replicate complete UI functionality in an agentic chat interface.",
-      "Combined with RAG system and MCP server of troubleshooting info, the agent can triage and resolve thousands of potential Rubrik user issues by combining solution steps with dynamically generated API actions.",
-      "Novel agentic solution was directly implemented into Rubrik's core product.",
-      "Worked closely with Distinguished and Staff engineers to implement my project into near-production builds.",
+      // "Created multi-agent system which dynamically generates API calls to replicate complete UI functionality in an agentic chat interface.",
+      // "Combined with RAG system and MCP server of troubleshooting info, the agent can triage and resolve thousands of potential Rubrik user issues by combining solution steps with dynamically generated API actions.",
+      "Novel agentic solution for resolving customer issues directly implemented into Rubrik's core product.",
+      "Worked closely with Distinguished and Staff engineers to implement project.",
       "Contributed to open-source project LiteLLM to unblock team on bugs stemming from the library.",
     ],
     technologies: [
