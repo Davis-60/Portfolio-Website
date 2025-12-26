@@ -105,7 +105,7 @@ const Projects = () => {
                   <Box
                     sx={{
                       display: "flex",
-                      alignItems: "flex-start",
+                      alignItems: "center",
                       gap: 2,
                       mb: 2,
                     }}
@@ -129,12 +129,12 @@ const Projects = () => {
                         {project.icon}
                       </Box>
                     )}
-                    <Box sx={{ flex: 1 }}>
+                    <Box sx={{ flex: 1, display: "flex", alignItems: "center" }}>
                       <Typography
-                        gutterBottom
                         variant="h5"
                         component="h3"
                         fontWeight="bold"
+                        sx={{ mb: 0 }}
                       >
                         {project.title}
                       </Typography>
