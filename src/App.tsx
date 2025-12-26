@@ -21,7 +21,13 @@ const App: React.FC = () => {
     <HashRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ 
+          minHeight: '100vh', 
+          display: 'flex', 
+          flexDirection: 'column',
+          backgroundColor: 'transparent',
+          position: 'relative',
+        }}>
           <Header />
           <Box component="main" sx={{ flexGrow: 1 }}>
             <Routes>

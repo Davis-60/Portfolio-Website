@@ -10,8 +10,10 @@ const Footer: React.FC = () => {
       component="footer"
       sx={{
         py: 5,
-        bgcolor: 'primary.main',
-        color: 'white',
+        backgroundColor: 'rgba(20, 20, 43, 0.8)',
+        backdropFilter: 'blur(10px)',
+        color: 'text.primary',
+        boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.15)',
       }}
     >
       <Container maxWidth="lg">

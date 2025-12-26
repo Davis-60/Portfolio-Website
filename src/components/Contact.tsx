@@ -26,7 +26,19 @@ const Contact: React.FC = () => {
         <Divider sx={{ mb: 6, width: '80px', mx: 'auto', borderBottomWidth: 3 }} />
         
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Paper elevation={2} sx={{ p: 4, maxWidth: '600px', width: '100%' }}>
+          <Paper 
+            elevation={2} 
+            sx={{ 
+              p: 4, 
+              maxWidth: '600px', 
+              width: '100%',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                transform: 'translateY(-4px)',
+                boxShadow: 6,
+              },
+            }}
+          >
             <Typography variant="h6" gutterBottom>
               Get In Touch
             </Typography>

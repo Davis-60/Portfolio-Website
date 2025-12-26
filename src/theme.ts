@@ -16,8 +16,8 @@ let theme = createTheme({
       contrastText: '#e6e6e6',
     },
     background: {
-      default: '#0f0f19ff',
-      paper: '#131627ff',
+      default: 'transparent',
+      paper: 'rgba(19, 22, 39, 0.85)',
     },
     text: {
       primary: '#d5d5df',
@@ -76,7 +76,8 @@ let theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#14142b',
+          backgroundColor: 'rgba(20, 20, 43, 0.8)',
+          backdropFilter: 'blur(10px)',
           color: '#ffffff',
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
         },
@@ -93,6 +94,7 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: 'none',
+          backdropFilter: 'blur(10px)',
         },
       },
     },
