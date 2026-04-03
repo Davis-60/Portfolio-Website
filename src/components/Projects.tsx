@@ -54,9 +54,9 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Fashion AI — Closet Tracking",
+    title: "ClosetCurate",
     description:
-      "Web app for organizing your closet and getting AI-powered outfit suggestions, with a focus on practical day-to-day styling.",
+      "Web app and Chrome extension to scrape and store detailed descriptions of clothing items to create AI-powered outfit suggestions.",
     tags: ["React", "AI", "PostgreSQL", "Python", "Chrome Extension"],
     liveDemoURL: "https://fashion-ai-frontend-kohl.vercel.app/",
     icon: <CheckroomIcon />,
