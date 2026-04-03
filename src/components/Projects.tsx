@@ -54,7 +54,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: "CDN Server",
-    description: "Multi-Threaded \"man in the middle\" server to incept web traffic and preform caching + rate limiting.",
+    description: "Multi-Threaded \"man in the middle\" server to intercept web traffic and perform caching + rate limiting.",
     tags: ["Python", "Networking", "Systems Programming", "Threading"],
     gitRepoURL: "",
     icon: <StorageIcon />,

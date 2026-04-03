@@ -7,8 +7,8 @@ import {
   Avatar,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
 const HomeComp = () => {
   return (
@@ -54,12 +54,12 @@ const HomeComp = () => {
             >
               <Button
                 variant="contained"
-                startIcon={<DownloadIcon />}
+                startIcon={<PictureAsPdfIcon />}
                 size="large"
                 component={Link}
                 to="/resume"
               >
-                Resume
+                View resume
               </Button>
               <Button
                 variant="outlined"

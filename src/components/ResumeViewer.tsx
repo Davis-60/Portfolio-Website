@@ -11,7 +11,7 @@ const ResumeViewer = () => {
       minHeight: '500px'
     }}>
       <iframe 
-        src='/Resume(2025).pdf' 
+        src='/Davis_Featherstone_Resume.pdf' 
         width='100%'
         height='100%'
         style={{ border: 'none' }}
