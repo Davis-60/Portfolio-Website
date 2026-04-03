@@ -12,9 +12,10 @@ import {
 import type { ReactNode } from "react";
 import SectionHeader from "./SectionHeader";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import CodeIcon from "@mui/icons-material/Code";
 import PsychologyIcon from "@mui/icons-material/Psychology";
-import StorageIcon from "@mui/icons-material/Storage";
+import CheckroomIcon from "@mui/icons-material/Checkroom";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 
 interface Project {
@@ -22,7 +23,8 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  gitRepoURL: string;
+  gitRepoURL?: string;
+  liveDemoURL?: string;
   icon?: ReactNode;
 }
 
@@ -32,7 +34,6 @@ const projects: Project[] = [
     title: "Customer Support Agentic AI",
     description: "Agentic AI for Customer Support at Rubrik. Combines dynamically generated API calls with solution steps to triage issues end to end.",
     tags: ["Google ADK", "Python", "LLM", "Agent Tools"],
-    gitRepoURL: "",
     icon: <PsychologyIcon />,
   },
   {
@@ -53,11 +54,12 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "CDN Server",
-    description: "Multi-Threaded \"man in the middle\" server to intercept web traffic and perform caching + rate limiting.",
-    tags: ["Python", "Networking", "Systems Programming", "Threading"],
-    gitRepoURL: "",
-    icon: <StorageIcon />,
+    title: "Fashion AI — Closet Tracking",
+    description:
+      "Web app for organizing your closet and getting AI-powered outfit suggestions, with a focus on practical day-to-day styling.",
+    tags: ["React", "AI", "PostgreSQL", "Python", "Chrome Extension"],
+    liveDemoURL: "https://fashion-ai-frontend-kohl.vercel.app/",
+    icon: <CheckroomIcon />,
   },
 ];
 
@@ -169,20 +171,34 @@ const Projects = () => {
                     ))}
                   </Stack>
                 </CardContent>
-                <CardActions sx={{ px: 3, pb: 2, pt: 0 }}>
-                  {project.gitRepoURL && (
-                    <Button
-                      size="medium"
-                      variant="outlined"
-                      startIcon={<GitHubIcon />}
-                      href={project.gitRepoURL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Code
-                    </Button>
-                  )}
-                </CardActions>
+                {(project.liveDemoURL || project.gitRepoURL) && (
+                  <CardActions sx={{ px: 3, pb: 2, pt: 0, gap: 1, flexWrap: "wrap" }}>
+                    {project.liveDemoURL && (
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        startIcon={<OpenInNewIcon />}
+                        href={project.liveDemoURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live app
+                      </Button>
+                    )}
+                    {project.gitRepoURL && (
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        startIcon={<GitHubIcon />}
+                        href={project.gitRepoURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Code
+                      </Button>
+                    )}
+                  </CardActions>
+                )}
               </Card>
             </Box>
           ))}
