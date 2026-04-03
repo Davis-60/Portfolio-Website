@@ -58,7 +58,7 @@ const projects: Project[] = [
     description:
       "Web app and Chrome extension to scrape and store detailed descriptions of clothing items to create AI-powered outfit suggestions.",
     tags: ["React", "AI", "PostgreSQL", "Python", "Chrome Extension"],
-    liveDemoURL: "https://fashion-ai-frontend-kohl.vercel.app/",
+    liveDemoURL: "https://closet-curate.vercel.app",
     icon: <CheckroomIcon />,
   },
 ];
