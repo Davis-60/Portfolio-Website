@@ -2,16 +2,10 @@ import {
   Box,
   Container,
   Typography,
-  CardContent,
-  Card,
-  Chip,
   Stack,
 } from "@mui/material";
 import type { CSSProperties } from "react";
-
-import BusinessIcon from "@mui/icons-material/Business";
-import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import SectionHeader from "./SectionHeader";
 
 interface WorkExperience {
   id: number;
@@ -33,8 +27,6 @@ const workExperiences: WorkExperience[] = [
     location: "Palo Alto, CA",
     duration: "May 2025 - Aug 2025",
     description: [
-      // "Created multi-agent system which dynamically generates API calls to replicate complete UI functionality in an agentic chat interface.",
-      // "Combined with RAG system and MCP server of troubleshooting info, the agent can triage and resolve thousands of potential Rubrik user issues by combining solution steps with dynamically generated API actions.",
       "Novel agentic solution for resolving customer issues directly implemented into Rubrik's core product.",
       "Worked closely with Distinguished and Staff engineers to implement project.",
       "Contributed to open-source project LiteLLM to unblock team on bugs stemming from the library.",
@@ -76,8 +68,8 @@ const workExperiences: WorkExperience[] = [
       "Leading office hours for Duke's upper-level algorithm design and analysis course.",
       "Grading homework and exams.",
     ],
-    logo: "/duke_circular_logo.webp",
-    logoStyle: { height: "110%", width: "110%" },
+    logo: "/duke_logo.png",
+    logoStyle: { height: "100%", width: "100%", objectFit: "contain" },
   },
 ];
 
@@ -86,204 +78,131 @@ const WorkHistory = () => {
     <Box
       sx={{
         bgcolor: "background.default",
-        py: 8,
-        minHeight: "100vh",
+        py: { xs: 6, md: 8 },
       }}
     >
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: "center", mb: 6 }}>
-          <Typography
-            variant="h3"
-            component="h1"
-            color="text.primary"
-            fontWeight="bold"
-            gutterBottom
-          >
-            Work Experience
-          </Typography>
-          <Box
-            component="hr"
-            sx={{
-              width: "80px",
-              mx: "auto",
-              border: "none",
-              borderBottom: "3px solid",
-              borderColor: "primary.main",
-              mb: 6,
-            }}
-          />
-        </Box>
+        <SectionHeader title="Work Experience" eyebrow="Experience" variant="h3" />
 
-        <Stack spacing={4}>
-          {workExperiences.map((experience) => (
-            <Card
+        <Stack
+          divider={
+            <Box sx={{ borderTop: "1px solid rgba(63, 63, 70, 0.4)" }} />
+          }
+        >
+          {workExperiences.map((experience, index) => (
+            <Box
               key={experience.id}
               sx={{
-                bgcolor: "background.paper",
-                border: "1px solid",
-                borderColor: "divider",
-                borderRadius: 3,
-                overflow: "hidden",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-4px)",
-                  boxShadow: 6,
-                  borderColor: "primary.main",
-                },
+                py: { xs: 3, md: 4 },
+                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
               }}
             >
-              <CardContent sx={{ p: 4 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: { xs: 2.5, md: 3 },
+                  alignItems: "flex-start",
+                }}
+              >
+                {/* Company logo */}
                 <Box
                   sx={{
+                    width: { xs: 40, md: 48 },
+                    height: { xs: 40, md: 48 },
+                    borderRadius: "12px",
+                    border: "1px solid rgba(63, 63, 70, 0.4)",
                     display: "flex",
-                    flexDirection: "row",
-                    gap: 3,
-                    alignItems: "flex-start",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    overflow: "hidden",
+                    mt: 0.5,
                   }}
                 >
-                  <Box
+                  <img
+                    src={experience.logo}
+                    alt={`${experience.company} logo`}
+                    style={{
+                      objectFit: "cover",
+                      ...experience.logoStyle,
+                    }}
+                  />
+                </Box>
+
+                <Box sx={{ flex: 1 }}>
+                  {/* Title + meta */}
+                  <Typography
+                    variant="h6"
+                    component="h2"
+                    color="text.primary"
+                    fontWeight={600}
+                    sx={{ mb: 0.5, fontSize: { xs: "1rem", md: "1.15rem" } }}
+                  >
+                    {experience.title}
+                  </Typography>
+
+                  <Typography
                     sx={{
-                      width: 70,
-                      height: 70,
-                      borderRadius: "50%",
-                      bgcolor: "background.paper",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                      boxShadow: 2,
-                      border: "1px solid",
-                      borderColor: "divider",
-                      overflow: "hidden",
+                      fontFamily: '"JetBrains Mono", ui-monospace, monospace',
+                      fontSize: "0.78rem",
+                      fontWeight: 500,
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: "text.disabled",
+                      mb: 2.5,
                     }}
                   >
-                    {/* Notice the style override for logos, adjust as needed */}
-                    <img
-                      src={experience.logo}
-                      alt={`${experience.company} logo`}
-                      style={{
-                        objectFit: "cover",
-                        ...experience.logoStyle,
-                      }}
-                    />
-                  </Box>
+                    {experience.company} &middot; {experience.location} &middot;{" "}
+                    {experience.duration}
+                  </Typography>
 
-                  <Box sx={{ flex: 1 }}>
-                    <Typography
-                      variant="h5"
-                      component="h2"
-                      color="text.primary"
-                      fontWeight="bold"
-                      gutterBottom
-                    >
-                      {experience.title}
-                    </Typography>
-
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        gap: 2,
-                        mb: 2,
-                      }}
-                    >
-                      <Box
-                        sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                      >
-                        <BusinessIcon color="primary" sx={{ fontSize: 20 }} />
-                        <Typography
-                          variant="body1"
-                          color="text.primary"
-                          fontWeight="medium"
-                        >
-                          {experience.company}
-                        </Typography>
-                      </Box>
-
-                      <Box
-                        sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                      >
-                        <LocationOnIcon color="primary" sx={{ fontSize: 20 }} />
-                        <Typography variant="body2" color="text.secondary">
-                          {experience.location}
-                        </Typography>
-                      </Box>
-
-                      <Box
-                        sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                      >
-                        <CalendarTodayIcon
-                          color="primary"
-                          sx={{ fontSize: 20 }}
-                        />
-                        <Typography variant="body2" color="text.secondary">
-                          {experience.duration}
-                        </Typography>
-                      </Box>
-                    </Box>
-
+                  {/* Description */}
+                  <Stack spacing={1} sx={{ mb: experience.technologies ? 2.5 : 0 }}>
                     {experience.description.map((item, idx) => (
                       <Typography
                         key={idx}
                         variant="body1"
                         color="text.secondary"
                         sx={{
-                          mb: 1,
                           pl: 2,
                           position: "relative",
+                          fontSize: "1rem",
+                          lineHeight: 1.7,
                           "&::before": {
                             content: '""',
                             position: "absolute",
                             left: 0,
                             top: "8px",
-                            width: "6px",
-                            height: "6px",
+                            width: "4px",
+                            height: "4px",
                             borderRadius: "50%",
-                            bgcolor: "primary.main",
+                            bgcolor: "text.disabled",
                           },
                         }}
                       >
                         {item}
                       </Typography>
                     ))}
+                  </Stack>
 
-                    {experience.technologies && (
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{ mb: 1, mt: 3, fontWeight: "medium" }}
-                      >
-                        Technologies & Skills:
-                      </Typography>
-                    )}
-                    <Stack
-                      direction="row"
-                      spacing={1}
-                      flexWrap="wrap"
-                      useFlexGap
+                  {/* Tech chips */}
+                  {experience.technologies && (
+                    <Typography
+                      sx={{
+                        fontFamily: '"JetBrains Mono", ui-monospace, monospace',
+                        fontSize: "0.78rem",
+                        fontWeight: 500,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "text.disabled",
+                      }}
                     >
-                      {experience.technologies &&
-                        experience.technologies.map((tech) => (
-                          <Chip
-                            key={tech}
-                            label={tech}
-                            size="small"
-                            variant="outlined"
-                            color="primary"
-                            sx={{
-                              fontSize: "0.75rem",
-                              "&:hover": {
-                                bgcolor: "primary.main",
-                                color: "white",
-                              },
-                            }}
-                          />
-                        ))}
-                    </Stack>
-                  </Box>
+                      {experience.technologies.join("  ·  ")}
+                    </Typography>
+                  )}
                 </Box>
-              </CardContent>
-            </Card>
+              </Box>
+            </Box>
           ))}
         </Stack>
       </Container>

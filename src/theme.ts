@@ -4,52 +4,60 @@ let theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#3a4a7a',
-      light: '#5a6a95',
-      dark: '#2a385d',
-      contrastText: '#e6e6e6',
+      main: '#3b82f6',
+      light: '#60a5fa',
+      dark: '#2563eb',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#8a5a55',
-      light: '#a77a75',
-      dark: '#6a443f',
-      contrastText: '#e6e6e6',
+      main: '#10b981',
+      light: '#34d399',
+      dark: '#059669',
+      contrastText: '#ffffff',
     },
     background: {
       default: 'transparent',
-      paper: 'rgba(19, 22, 39, 0.85)',
+      paper: '#16161b',
     },
     text: {
-      primary: '#d5d5df',
-      secondary: '#9a9aad',
+      primary: '#fafafa',
+      secondary: '#a1a1aa',
+      disabled: '#71717a',
     },
+    divider: 'rgba(63, 63, 70, 0.4)',
   },
   typography: {
     fontFamily: [
+      'Geist',
       'Inter',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
       'Roboto',
       '"Helvetica Neue"',
       'Arial',
       'sans-serif',
     ].join(','),
     h1: {
-      fontWeight: 700,
+      fontFamily: '"Instrument Serif", Georgia, serif',
+      fontWeight: 400,
+      letterSpacing: '-0.02em',
     },
     h2: {
-      fontWeight: 700,
+      fontFamily: '"Instrument Serif", Georgia, serif',
+      fontWeight: 400,
+      letterSpacing: '-0.02em',
     },
     h3: {
-      fontWeight: 600,
+      fontFamily: '"Instrument Serif", Georgia, serif',
+      fontWeight: 400,
+      letterSpacing: '-0.015em',
     },
-    h4: {
-      fontWeight: 600,
-    },
-    h5: {
-      fontWeight: 500,
-    },
-    h6: {
-      fontWeight: 500,
-    },
+    h4: { fontWeight: 700, letterSpacing: '-0.015em' },
+    h5: { fontWeight: 600 },
+    h6: { fontWeight: 600 },
+    body1: { lineHeight: 1.7 },
+    body2: { lineHeight: 1.6 },
   },
   shape: {
     borderRadius: 12,
@@ -59,9 +67,29 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderRadius: 12,
-          padding: '10px 18px',
-          fontWeight: 500,
+          borderRadius: 10,
+          padding: '10px 22px',
+          fontWeight: 600,
+          fontSize: '0.9rem',
+          transition: 'all 0.2s ease',
+        },
+        contained: {
+          backgroundColor: '#3b82f6',
+          boxShadow: 'none',
+          '&:hover': {
+            backgroundColor: '#2563eb',
+            boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)',
+            transform: 'translateY(-1px)',
+          },
+        },
+        outlined: {
+          borderColor: 'rgba(63, 63, 70, 0.4)',
+          color: '#fafafa',
+          '&:hover': {
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.06)',
+            transform: 'translateY(-1px)',
+          },
         },
       },
     },
@@ -69,24 +97,28 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           overflow: 'hidden',
-          boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+          boxShadow: 'none',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(63, 63, 70, 0.4)',
+          transition: 'all 0.3s ease',
         },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'rgba(20, 20, 43, 0.8)',
-          backdropFilter: 'blur(10px)',
-          color: '#ffffff',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+          backgroundColor: 'rgba(10, 10, 15, 0.8)',
+          backdropFilter: 'blur(16px)',
+          color: '#fafafa',
+          boxShadow: 'none',
+          borderBottom: '1px solid rgba(63, 63, 70, 0.4)',
         },
       },
     },
     MuiDivider: {
       styleOverrides: {
         root: {
-          backgroundColor: '#6c63ff',
+          borderColor: 'rgba(63, 63, 70, 0.4)',
         },
       },
     },
@@ -94,14 +126,30 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: 'none',
-          backdropFilter: 'blur(10px)',
+          backdropFilter: 'blur(12px)',
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontWeight: 500,
+          transition: 'all 0.2s ease',
+        },
+        outlined: {
+          borderColor: 'rgba(63, 63, 70, 0.4)',
+          color: '#a1a1aa',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.04)',
+            borderColor: 'rgba(113, 113, 122, 0.8)',
+            color: '#fafafa',
+          },
         },
       },
     },
   },
 });
 
-// Apply responsive font sizes
 theme = responsiveFontSizes(theme);
 
-export default theme; 
+export default theme;

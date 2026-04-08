@@ -1,32 +1,46 @@
-import { Typography, Divider } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 interface SectionHeaderProps {
   title: string;
+  eyebrow?: string;
   variant?: "h2" | "h3" | "h4";
-  gutterBottom?: boolean;
+  align?: "left" | "center";
 }
 
-const SectionHeader = ({ 
-  title, 
-  variant = "h4",
-  gutterBottom = true 
+const SectionHeader = ({
+  title,
+  eyebrow,
+  variant = "h3",
+  align = "left",
 }: SectionHeaderProps) => (
-  <>
+  <Box sx={{ textAlign: align, mb: 6 }}>
+    {eyebrow && (
+      <Typography
+        sx={{
+          fontFamily: '"JetBrains Mono", ui-monospace, monospace',
+          fontSize: "0.7rem",
+          fontWeight: 500,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "text.disabled",
+          mb: 1.5,
+        }}
+      >
+        {eyebrow}
+      </Typography>
+    )}
     <Typography
       component="h2"
       variant={variant}
-      align="center"
       color="text.primary"
-      gutterBottom={gutterBottom}
-      fontWeight="bold"
+      sx={{
+        fontSize: { xs: "2.6rem", md: "3.4rem" },
+        lineHeight: 1.05,
+      }}
     >
       {title}
     </Typography>
-    <Divider
-      sx={{ mb: 6, width: "80px", mx: "auto", borderBottomWidth: 3 }}
-    />
-  </>
+  </Box>
 );
 
 export default SectionHeader;
-

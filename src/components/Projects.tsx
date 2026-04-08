@@ -1,22 +1,8 @@
-import {
-  Box,
-  Container,
-  Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Button,
-  Chip,
-  Stack,
-} from "@mui/material";
-import type { ReactNode } from "react";
+import { Box, Container, Typography, Stack } from "@mui/material";
 import SectionHeader from "./SectionHeader";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import CodeIcon from "@mui/icons-material/Code";
-import PsychologyIcon from "@mui/icons-material/Psychology";
-import CheckroomIcon from "@mui/icons-material/Checkroom";
-import AnalyticsIcon from "@mui/icons-material/Analytics";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 interface Project {
   id: number;
@@ -25,32 +11,31 @@ interface Project {
   tags: string[];
   gitRepoURL?: string;
   liveDemoURL?: string;
-  icon?: ReactNode;
 }
 
 const projects: Project[] = [
   {
     id: 1,
     title: "Customer Support Agentic AI",
-    description: "Agentic AI for Customer Support at Rubrik. Combines dynamically generated API calls with solution steps to triage issues end to end.",
+    description:
+      "Agentic AI for Customer Support at Rubrik. Combines dynamically generated API calls with solution steps to triage issues end to end.",
     tags: ["Google ADK", "Python", "LLM", "Agent Tools"],
-    icon: <PsychologyIcon />,
   },
   {
     id: 2,
     title: "Background Music Generation",
-    description: "System using a fine-tuned LLaVA model + Meta MusicGen to add context-aware AI background music to video clips.",
+    description:
+      "System using a fine-tuned LLaVA model + Meta MusicGen to add context-aware AI background music to video clips.",
     tags: ["Machine Learning", "Music Generation", "LoRA"],
     gitRepoURL: "https://github.com/Davis-60/CS372_Final_Project",
-    icon: <CodeIcon />,
   },
   {
     id: 3,
     title: "System for Processor Analysis GUI",
-    description: "Project improves upon Duke Research Project applying Statistical Model Checking to Computer Architecture Data.",
+    description:
+      "Project improves upon Duke Research Project applying Statistical Model Checking to Computer Architecture Data.",
     tags: ["Python", "Tkinter", "LLM"],
     gitRepoURL: "https://gitlab.oit.duke.edu/dcf33/spa-gui",
-    icon: <AnalyticsIcon />,
   },
   {
     id: 4,
@@ -59,7 +44,6 @@ const projects: Project[] = [
       "Web app and Chrome extension to scrape and store detailed descriptions of clothing items to create AI-powered outfit suggestions.",
     tags: ["React", "AI", "PostgreSQL", "Python", "Chrome Extension"],
     liveDemoURL: "https://closet-curate.vercel.app",
-    icon: <CheckroomIcon />,
   },
 ];
 
@@ -68,141 +52,144 @@ const Projects = () => {
     <Box
       sx={{
         bgcolor: "background.default",
-        py: 8,
+        py: { xs: 6, md: 8 },
       }}
     >
       <Container maxWidth="lg">
-        <SectionHeader title="My Projects" variant="h4" />
+        <SectionHeader title="Selected Work" eyebrow="Projects" variant="h3" />
 
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-          {projects.map((project) => (
+        <Stack
+          divider={
+            <Box sx={{ borderTop: "1px solid rgba(63, 63, 70, 0.4)" }} />
+          }
+        >
+          {projects.map((project, index) => (
             <Box
               key={project.id}
               sx={{
-                width: {
-                  xs: "100%",
-                  sm: "calc(50% - 16px)",
-                  lg: "calc(50% - 16px)",
-                },
+                py: { xs: 3, md: 4 },
+                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
               }}
             >
-              <Card
+              <Box
                 sx={{
-                  height: "100%",
                   display: "flex",
-                  flexDirection: "column",
-                  bgcolor: "background.paper",
-                  border: "1px solid",
-                  borderColor: "divider",
-                  borderRadius: 3,
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow: 8,
-                  },
+                  flexDirection: { xs: "column", md: "row" },
+                  gap: { xs: 2, md: 4 },
                 }}
-                elevation={0}
               >
-                <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Box
+                {/* Left: title + tags */}
+                <Box sx={{ flex: "0 0 280px" }}>
+                  <Typography
+                    variant="h6"
+                    component="h3"
+                    color="text.primary"
+                    fontWeight={600}
+                    sx={{ mb: 1.5, fontSize: { xs: "1rem", md: "1.15rem" } }}
+                  >
+                    {project.title}
+                  </Typography>
+
+                  <Typography
                     sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 2,
-                      mb: 2,
+                      fontFamily: '"JetBrains Mono", ui-monospace, monospace',
+                      fontSize: "0.78rem",
+                      fontWeight: 500,
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: "text.disabled",
+                      mb: { xs: 0, md: 2 },
                     }}
                   >
-                    {project.icon && (
-                      <Box
-                        sx={{
-                          p: 1.5,
-                          borderRadius: 2,
-                          bgcolor: "primary.main",
-                          color: "primary.contrastText",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          "& svg": {
-                            fontSize: 28,
-                          },
-                        }}
-                      >
-                        {project.icon}
-                      </Box>
-                    )}
-                    <Box sx={{ flex: 1, display: "flex", alignItems: "center" }}>
-                      <Typography
-                        variant="h5"
-                        component="h3"
-                        fontWeight="bold"
-                        sx={{ mb: 0 }}
-                      >
-                        {project.title}
-                      </Typography>
-                    </Box>
-                  </Box>
+                    {project.tags.join("  ·  ")}
+                  </Typography>
+                </Box>
+
+                {/* Right: description + links */}
+                <Box sx={{ flex: 1 }}>
                   <Typography
                     variant="body1"
                     color="text.secondary"
-                    sx={{
-                      lineHeight: 1.7,
-                      mb: 2,
-                    }}
+                    sx={{ fontSize: "1rem", lineHeight: 1.7, mb: 2 }}
                   >
                     {project.description}
                   </Typography>
-                  <Stack
-                    direction="row"
-                    spacing={1}
-                    flexWrap="wrap"
-                    useFlexGap
-                    sx={{ mt: 2 }}
-                  >
-                    {project.tags.map((tag) => (
-                      <Chip
-                        key={tag}
-                        label={tag}
-                        size="small"
-                        variant="outlined"
-                        color="primary"
-                        sx={{ mb: 1 }}
-                      />
-                    ))}
-                  </Stack>
-                </CardContent>
-                {(project.liveDemoURL || project.gitRepoURL) && (
-                  <CardActions sx={{ px: 3, pb: 2, pt: 0, gap: 1, flexWrap: "wrap" }}>
-                    {project.liveDemoURL && (
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        startIcon={<OpenInNewIcon />}
-                        href={project.liveDemoURL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Live app
-                      </Button>
-                    )}
-                    {project.gitRepoURL && (
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        startIcon={<GitHubIcon />}
-                        href={project.gitRepoURL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    )}
-                  </CardActions>
-                )}
-              </Card>
+
+                  {(project.liveDemoURL || project.gitRepoURL) && (
+                    <Stack direction="row" spacing={3}>
+                      {project.liveDemoURL && (
+                        <Box
+                          component="a"
+                          href={project.liveDemoURL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 0.75,
+                            textDecoration: "none",
+                            color: "text.disabled",
+                            fontSize: "0.85rem",
+                            transition: "all 0.2s ease",
+                            "&:hover": {
+                              color: "text.primary",
+                              "& .link-arrow": {
+                                transform: "translate(2px, -2px)",
+                              },
+                            },
+                          }}
+                        >
+                          <OpenInNewIcon sx={{ fontSize: 16 }} />
+                          Live app
+                          <ArrowOutwardIcon
+                            className="link-arrow"
+                            sx={{
+                              fontSize: 14,
+                              transition: "transform 0.2s ease",
+                            }}
+                          />
+                        </Box>
+                      )}
+                      {project.gitRepoURL && (
+                        <Box
+                          component="a"
+                          href={project.gitRepoURL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 0.75,
+                            textDecoration: "none",
+                            color: "text.disabled",
+                            fontSize: "0.85rem",
+                            transition: "all 0.2s ease",
+                            "&:hover": {
+                              color: "text.primary",
+                              "& .link-arrow": {
+                                transform: "translate(2px, -2px)",
+                              },
+                            },
+                          }}
+                        >
+                          <GitHubIcon sx={{ fontSize: 16 }} />
+                          Code
+                          <ArrowOutwardIcon
+                            className="link-arrow"
+                            sx={{
+                              fontSize: 14,
+                              transition: "transform 0.2s ease",
+                            }}
+                          />
+                        </Box>
+                      )}
+                    </Stack>
+                  )}
+                </Box>
+              </Box>
             </Box>
           ))}
-        </Box>
+        </Stack>
       </Container>
     </Box>
   );
