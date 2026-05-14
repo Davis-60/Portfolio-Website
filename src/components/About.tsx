@@ -4,7 +4,7 @@ import SectionHeader from "./SectionHeader";
 const educationDetails: { label: string; value: string }[] = [
   { label: "Institution", value: "Duke University" },
   { label: "Degree", value: "B.S. in Computer Science" },
-  { label: "Graduating", value: "2026" },
+  { label: "Graduated", value: "2026" },
   {
     label: "Coursework",
     value:
@@ -49,7 +49,7 @@ const About = () => {
                 mb: 3,
               }}
             >
-              I'm a Computer Science student at Duke University with a deep
+              I'm a recent graduate of Duke University with a BS in Computer Science and a deep
               interest in technology, innovation, and software development. My
               journey began with curiosity about how technology can be used to
               positively shape our world, and has evolved into a focused

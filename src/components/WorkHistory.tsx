@@ -22,6 +22,18 @@ interface WorkExperience {
 const workExperiences: WorkExperience[] = [
   {
     id: 1,
+    title: "Incoming Software Engineer",
+    company: "Plaid",
+    location: "New York City",
+    duration: "Starting July 2026",
+    description: [
+      "Joining Plaid as a Software Engineer.",
+    ],
+    logo: "/plaid_logo.jpeg",
+    logoStyle: { height: "130%", width: "130%", objectFit: "contain" },
+  },
+  {
+    id: 2,
     title: "Software Engineering Intern",
     company: "Rubrik",
     location: "Palo Alto, CA",
@@ -42,7 +54,7 @@ const workExperiences: WorkExperience[] = [
     logoStyle: { height: "80%", width: "80%" },
   },
   {
-    id: 2,
+    id: 3,
     title: "Software Engineering Intern",
     company: "Aunalytics",
     location: "Traverse City, MI",
@@ -59,11 +71,11 @@ const workExperiences: WorkExperience[] = [
     logoStyle: { height: "100%", width: "100%" },
   },
   {
-    id: 3,
+    id: 4,
     title: "CS 330 Teaching Assistant",
     company: "Duke University",
     location: "Durham, NC",
-    duration: "August 2025 - Present",
+    duration: "August 2025 - May 2026",
     description: [
       "Leading office hours for Duke's upper-level algorithm design and analysis course.",
       "Grading homework and exams.",

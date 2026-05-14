@@ -79,7 +79,7 @@ const HomeComp = () => {
                 lineHeight: 1.8,
               }}
             >
-              I'm a student at Duke University studying Computer Science and
+              I'm a recent graduate of Duke University with a BS in Computer Science and minor in
               Economics. Passionate about full-stack development and agentic AI.
             </Typography>
             <Stack

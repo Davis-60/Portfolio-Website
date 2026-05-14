@@ -23,6 +23,14 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Smart Mirror Platform",
+    description:
+      "Raspberry Pi smart mirror system. Uses facial recognition to load user specific profiles with custom widget layouts defined in a web editor. Also includes gesture and speech input. Built in team of 3.",
+    tags: ["Raspberry Pi", "React", "TypeScript", "Python", "Flask", "Computer Vision"],
+    gitRepoURL: "https://github.com/danieljcohen/smart_mirror",
+  },
+  {
+    id: 3,
     title: "Background Music Generation",
     description:
       "System using a fine-tuned LLaVA model + Meta MusicGen to add context-aware AI background music to video clips.",
@@ -30,7 +38,7 @@ const projects: Project[] = [
     gitRepoURL: "https://github.com/Davis-60/CS372_Final_Project",
   },
   {
-    id: 3,
+    id: 4,
     title: "System for Processor Analysis GUI",
     description:
       "Project improves upon Duke Research Project applying Statistical Model Checking to Computer Architecture Data.",
@@ -38,7 +46,7 @@ const projects: Project[] = [
     gitRepoURL: "https://gitlab.oit.duke.edu/dcf33/spa-gui",
   },
   {
-    id: 4,
+    id: 5,
     title: "ClosetCurate",
     description:
       "Web app and Chrome extension to scrape and store detailed descriptions of clothing items to create AI-powered outfit suggestions.",
