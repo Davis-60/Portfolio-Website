@@ -153,14 +153,14 @@ const HomeComp = () => {
             >
               <Box
                 component="img"
-                src="/ProfilePicture.jpeg"
+                src="/ProfilePicture.jpg"
                 alt="Davis Featherstone"
                 sx={{
                   width: "100%",
                   height: "100%",
                   borderRadius: "24px",
                   objectFit: "cover",
-                  objectPosition: "center top",
+                  objectPosition: "center 40%",
                   position: "relative",
                   zIndex: 1,
                   border: "1px solid rgba(63, 63, 70, 0.4)",
