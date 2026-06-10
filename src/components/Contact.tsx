@@ -9,8 +9,8 @@ const contactLinks = [
   {
     icon: <EmailIcon sx={{ fontSize: 20 }} />,
     label: "Email",
-    value: "davis.featherstone@duke.edu",
-    href: "mailto:davis.featherstone@duke.edu",
+    value: "featherstone.davis@gmail.com",
+    href: "mailto:featherstone.davis@gmail.com",
   },
   {
     icon: <GitHubIcon sx={{ fontSize: 20 }} />,

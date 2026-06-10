@@ -6,7 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 const footerLinks = [
   { icon: <GitHubIcon sx={{ fontSize: 16 }} />, href: "https://github.com/Davis-60", label: "GitHub" },
   { icon: <LinkedInIcon sx={{ fontSize: 16 }} />, href: "https://linkedin.com/in/davis-featherstone", label: "LinkedIn" },
-  { icon: <EmailIcon sx={{ fontSize: 16 }} />, href: "mailto:davis.featherstone@duke.edu", label: "Email" },
+  { icon: <EmailIcon sx={{ fontSize: 16 }} />, href: "mailto:featherstone.davis@gmail.com", label: "Email" },
 ];
 
 const Footer = () => {
