@@ -1,5 +1,5 @@
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import { HashRouter,  Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import theme from './theme';
 
 // Components
@@ -16,8 +16,7 @@ import ResumePage from './pages/ResumePage';
 
 const App = () => {
   return (
-    //Using Hash Router to work with static site deployment
-    <HashRouter>
+    <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Box sx={{ 
@@ -41,7 +40,7 @@ const App = () => {
           <Footer />
         </Box>
       </ThemeProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
