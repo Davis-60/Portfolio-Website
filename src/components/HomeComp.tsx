@@ -66,7 +66,7 @@ const HomeComp = () => {
                 mb: 3,
               }}
             >
-              Computer Science Student
+              Software Engineer @ Plaid
             </Typography>
             <Typography
               variant="body1"
