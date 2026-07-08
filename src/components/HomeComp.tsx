@@ -79,8 +79,8 @@ const HomeComp = () => {
                 lineHeight: 1.8,
               }}
             >
-              I'm a recent graduate of Duke University with a BS in Computer Science and minor in
-              Economics. Passionate about full-stack development and agentic AI.
+              Software engineer at Plaid, passionate about full-stack development and agentic
+              AI. Duke University BS in Computer Science with a minor in Economics, class of 2026.
             </Typography>
             <Stack
               direction="row"

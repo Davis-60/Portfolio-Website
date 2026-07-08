@@ -18,14 +18,14 @@ const projects: Project[] = [
     id: 1,
     title: "Customer Support Agentic AI",
     description:
-      "Agentic AI for Customer Support at Rubrik. Combines dynamically generated API calls with solution steps to triage issues end to end.",
+      "Built an agentic AI system for customer support at Rubrik. Combines dynamically generated API calls with solution steps to triage issues end to end.",
     tags: ["Google ADK", "Python", "LLM", "Agent Tools"],
   },
   {
     id: 2,
     title: "Smart Mirror Platform",
     description:
-      "Raspberry Pi smart mirror system. Uses facial recognition to load user specific profiles with custom widget layouts defined in a web editor. Also includes gesture and speech input. Built in team of 3.",
+      "Raspberry Pi smart mirror system. Uses facial recognition to load user-specific profiles with custom widget layouts defined in a web editor. Also includes gesture and speech input. Built with a team of 3.",
     tags: ["Raspberry Pi", "React", "TypeScript", "Python", "Flask", "Computer Vision"],
     gitRepoURL: "https://github.com/danieljcohen/smart_mirror",
   },
@@ -41,7 +41,7 @@ const projects: Project[] = [
     id: 4,
     title: "System for Processor Analysis GUI",
     description:
-      "Project improves upon Duke Research Project applying Statistical Model Checking to Computer Architecture Data.",
+      "GUI that improves on a Duke research project applying statistical model checking to computer architecture data.",
     tags: ["Python", "Tkinter", "LLM"],
     gitRepoURL: "https://gitlab.oit.duke.edu/dcf33/spa-gui",
   },
